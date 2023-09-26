@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="studentBean"
+		class="com.amit.autowiring.Student">
+
+		<property name="admNo" value="2946" />
+		<property name="sname" value="Amit" />
+		<property name="stream" value="Science" />
+		<property name="school" ref="schoolBean" />
+
+	</bean>
+
+	<bean id="schoolBean"
+		class="com.amit.autowiring.School">
+		
+		<constructor-arg name="sno" value="1001"/>
+		<constructor-arg name="sname" value="St. columbus school"/>
+		<constructor-arg name="board" value="CBSE"/>
+	
+	</bean>
+</beans>

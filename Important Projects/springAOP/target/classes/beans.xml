@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+    <aop:aspectj-autoproxy/>
+
+	<bean id="mypointCutAspect"
+		class="com.amit.springAOP.AspectConfig" />
+
+	<!--  <aop:config>
+		<aop:aspect id="mtAdvice" ref="mypointCutAspect">
+
+			<aop:pointcut id="myPointCutExpression"
+				expression="execution(* com.amit.springAOP.pointcuts.Items.*())" />
+
+			<aop:before pointcut-ref="myPointCutExpression"
+				method="printLogo" />
+
+		</aop:aspect>
+	</aop:config>
+	
+	-->
+
+	<bean id="itemOne" class="com.amit.springAOP.pointcuts.Items">
+
+		<property name="itemId" value="101" />
+		<property name="itemName" value="Bread" />
+		<property name="price" value="25.5" />
+		<property name="avlQty" value="10" />
+
+	</bean>
+
+</beans>

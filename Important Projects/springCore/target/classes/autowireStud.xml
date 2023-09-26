@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="studentBean" class="com.amit.autowiring.Student" autowire="byType">
+	
+	<!-- * In By name bean name should be same as 
+	       variable name in the parent bean.
+	
+	     * In By Type bean name can be any thing.
+	
+         * In By Constructor, we need to use the constructor arg instead of property and child bean 
+	       should be same as constructor passed value eg. school. 
+	 -->
+
+		<property name="admNo" value="2946" />
+		<property name="sname" value="Amit" />
+		<property name="stream" value="Science" />
+
+	</bean>
+
+	<bean id="schoolBean" class="com.amit.autowiring.School"> 
+	
+
+		<property name="sno" value="1001" />
+		<property name="sname" value="St. columbus school" />
+		<property name="board" value="CBSE" />
+
+	</bean>
+
+</beans>

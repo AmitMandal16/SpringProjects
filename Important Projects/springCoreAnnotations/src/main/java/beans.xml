@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:annotation-config />
+
+	<bean id="studentBean" class="com.amit.autowiring.Student">
+
+		<property name="admNo" value="2946" />
+		<property name="sname" value="Amit" />
+		<property name="stream" value="Science" />
+
+		<!-- <constructor-arg name="admNo" value="2946" /> 
+		     <constructor-arg name="sname" value="Amit" />
+		     <constructor-arg name="stream" value="Science" /> -->
+			
+		<property name="notes">
+			<list>
+				<value>English Medium</value>
+				<value>Day Boarding</value>
+			</list>
+		</property>
+
+	</bean>
+
+	<!-- In this Autowiring is happening through the constructor and by type 
+		and no need to change the bean name.. -->
+	<bean id="schoolBean" class="com.amit.autowiring.School">
+
+		<property name="sno" value="1001" />
+		<property name="sname" value="St. columbus school" />
+		<property name="board" value="CBSE" />
+
+	</bean>
+
+	<bean id="MVNschoolBean" class="com.amit.autowiring.School">
+
+		<property name="sno" value="1002" />
+		<property name="sname"
+			value="Manav Rachna International School" />
+		<property name="board" value="ICSC" />
+
+	</bean>
+
+	<bean id="state" class="com.amit.autowiring.State">
+
+		<property name="pin" value="121009" />
+		<property name="stName" value="Haryana" />
+
+	</bean>
+
+
+
+
+</beans>
